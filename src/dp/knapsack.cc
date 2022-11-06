@@ -1,6 +1,10 @@
-#include <vector>
+/* 0-1 knapsack problem
+*  Algorithm that solves the 0-1 knapsack problem.
+*/
 
-using namespace std;
+#include <vector>
+#include <iostream>
+#include <string>
 
 int knapsack(std::vector<int> vals, std::vector<int> wts, int W)
 {
@@ -12,19 +16,17 @@ int knapsack(std::vector<int> vals, std::vector<int> wts, int W)
     );
     for (int i = 0; i <= n; i++) {
         for (int j = 0; j <= W; j++) {
-            int val_i = vals[i];
-            int wt_i = wts[i];
             if (i == 0 || j == 0) {
                 V[i][j] = 0;
             }
-            else if (wt_i <= j) {
+            else if (wts[i - 1] <= j) {
                 V[i][j] = std::max(
-                    V[i][j - wt_i] + val_i,
-                    V[i-1][j]
+                    V[i - 1][j - wts[i - 1]] + vals[i - 1],
+                    V[i - 1][j]
                 );
             }
             else {
-                V[i][j] = V[i-1][j];
+                V[i][j] = V[i - 1][j];
             }
         }
     }

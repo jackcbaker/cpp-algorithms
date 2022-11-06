@@ -1,5 +1,5 @@
-#ifndef SQUARE_H
-#define SQUARE_H
+#ifndef KNAPSACK_H
+#define KNAPSACK_H
 
 #include <vector>
 
