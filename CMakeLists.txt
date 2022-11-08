@@ -16,16 +16,17 @@ enable_testing()
 add_subdirectory(src)
 
 add_executable(
-  knapsack_test
+  dp_tests
   tests/dp/knapsack_test.cc
+  tests/dp/job_sequencing_test.cc
 )
 
 target_link_libraries(
-  knapsack_test
+  dp_tests
   PUBLIC
   dp
   GTest::gtest_main
 )
 
 include(GoogleTest)
-gtest_discover_tests(knapsack_test)
+gtest_discover_tests(dp_tests)

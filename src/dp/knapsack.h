@@ -1,8 +1,8 @@
-#ifndef SQUARE_H
-#define SQUARE_H
+#ifndef KNAPSACK_H
+#define KNAPSACK_H
 
 #include <vector>
 
-int knapsack(std::vector<int> vals, std::vector<int> wts, int W);
+int knapsack(const std::vector<int>& vals, const std::vector<int>& wts, int W);
 
 #endif
