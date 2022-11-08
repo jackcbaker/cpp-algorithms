@@ -6,7 +6,7 @@
 #include <iostream>
 #include <string>
 
-int knapsack(std::vector<int> vals, std::vector<int> wts, int W)
+int knapsack(const std::vector<int>& vals, const std::vector<int>& wts, int W)
 {
     int n = vals.size();
     // Rows are items available, columns is weight available.

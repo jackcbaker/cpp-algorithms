@@ -13,6 +13,7 @@ struct Job
 };
 
 
-int job_sequencing(std::vector<Job> jobs, int horizon);
+int jobSequencing(std::vector<Job> jobs, int horizon);
+
 
 #endif
