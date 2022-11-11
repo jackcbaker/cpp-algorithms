@@ -22,13 +22,31 @@ class LinkedList
 public:
     LinkedListNode<T>* head {};
 
-    T pop() {
-        if (head == NULL) {
-            return 0;
+    T popLeft() {
+        if (head == nullptr) {
+            return T();
         }
         T dataOut = head->data;
         head = head->next;
         return dataOut;
+    }
+
+    T pop() {
+        if (head == nullptr) {
+            return T();
+        }
+        LinkedListNode<T>* traverser = head;
+        if (traverser->next == nullptr) {
+            head = nullptr;
+            return traverser->data;
+        }
+        LinkedListNode<T>* traverserNext = head->next;
+        while (traverserNext->next != nullptr) {
+            traverser = traverser->next;
+            traverserNext = traverserNext->next;
+        }
+        traverser->next = nullptr;
+        return traverserNext->data;
     }
 
     void insert(T data) {
@@ -37,16 +55,15 @@ public:
     }
 
     void append(T data) {
-        if (head == NULL) {
-            head = new LinkedListNode<T>(data, NULL);
+        if (head == nullptr) {
+            head = new LinkedListNode<T>(data, nullptr);
             return;
         }
-        
         LinkedListNode<T>* traverser = head;
-        while (traverser->next != NULL) {
+        while (traverser->next != nullptr) {
             traverser = traverser->next;
         }
-        traverser->next = new LinkedListNode<T>(data, NULL);
+        traverser->next = new LinkedListNode<T>(data, nullptr);
     }
 };
 
