@@ -5,3 +5,10 @@ add_library(
 )
 
 target_include_directories(dp PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/dp")
+
+add_library(
+    data_structures SHARED
+    data_structures/linked_list.cc
+)
+
+target_include_directories(data_structures PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/data_structures")

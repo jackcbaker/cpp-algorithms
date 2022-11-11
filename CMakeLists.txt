@@ -28,5 +28,18 @@ target_link_libraries(
   GTest::gtest_main
 )
 
+add_executable(
+  data_structures_tests
+  tests/data_structures/linked_list_test.cc
+)
+
+target_link_libraries(
+  data_structures_tests
+  PUBLIC
+  data_structures
+  GTest::gtest_main
+)
+
 include(GoogleTest)
 gtest_discover_tests(dp_tests)
+gtest_discover_tests(data_structures_tests)
