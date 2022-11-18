@@ -9,6 +9,7 @@ target_include_directories(dp PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/dp")
 add_library(
     data_structures SHARED
     data_structures/linked_list.cc
+    data_structures/linked_list_simple.cc
     data_structures/stack.cc
     data_structures/tree.cc
 )

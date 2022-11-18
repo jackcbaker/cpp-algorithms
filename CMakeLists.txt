@@ -31,6 +31,7 @@ target_link_libraries(
 add_executable(
   data_structures_tests
   tests/data_structures/linked_list_test.cc
+  tests/data_structures/linked_list_simple_test.cc
   tests/data_structures/stack_test.cc
   tests/data_structures/tree_count_test.cc
 )
